@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://cata-tudo.vercel.app/sitemap.txt
