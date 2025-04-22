@@ -12,6 +12,14 @@ header, footer {
     padding: 1em;
     text-align: center;
 }
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
 main {
     padding: 1em;
 }

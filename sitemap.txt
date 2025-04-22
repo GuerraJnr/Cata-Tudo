@@ -3,3 +3,4 @@ https://cata-tudo.vercel.app/
 https://cata-tudo.vercel.app/sobre.html
 https://cata-tudo.vercel.app/contato.html
 https://cata-tudo.vercel.app/privacidade.html
+https://cata-tudo.vercel.app/gerador.html

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Artigos - Cata Tudo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        textarea { width: 100%; height: 200px; margin-top: 1em; }
+        input[type="text"] { width: 100%; padding: 0.5em; margin-top: 0.5em; }
+        button { padding: 0.7em 1.2em; background: #6200ea; color: white; border: none; margin-top: 1em; cursor: pointer; }
+        button:hover { background: #4b00b8; }
+        .output { background: #eee; padding: 1em; border-radius: 5px; margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <header><h1>Gerador de Artigos Afiliados</h1></header>
+    <main>
+        <p>Cole abaixo o link de um produto da Amazon:</p>
+        <input type="text" id="amazonLink" placeholder="https://www.amazon.com.br/dp/B0CXXXXXXX">
+        <button onclick="gerarArtigo()">Gerar Artigo</button>
+
+        <div class="output">
+            <h2>Artigo Gerado:</h2>
+            <textarea id="resultado" readonly></textarea>
+        </div>
+    </main>
+    <footer><p>&copy; 2025 Cata Tudo</p></footer>
+
+    <script>
+    function gerarArtigo() {
+        const link = document.getElementById("amazonLink").value.trim();
+        if (!link.includes("amazon.")) {
+            alert("Por favor, insira um link válido da Amazon.");
+            return;
+        }
+        const idAfiliado = "guerrajnr-21";
+        const linkAfiliado = link.includes("?") ? link + "&tag=" + idAfiliado : link + "?tag=" + idAfiliado;
+
+        const titulo = "Top Produto que Você Precisa Conhecer!";
+        const descricao = "Descubra este item incrível da Amazon que está conquistando os usuários. Ideal para o dia a dia e com ótimo custo-benefício.";
+        const beneficios = ["Alta qualidade", "Entrega rápida", "Ótimo custo-benefício", "Bem avaliado na Amazon"];
+
+        const artigoHTML = `
+<h3>${titulo}</h3>
+<p>${descricao}</p>
+<ul>
+    ${beneficios.map(b => `<li>${b}</li>`).join("")}
+</ul>
+<p><a href="${linkAfiliado}" target="_blank" style="color:#6200ea;font-weight:bold;">Comprar agora na Amazon</a></p>`;
+
+        document.getElementById("resultado").value = artigoHTML;
+    }
+    </script>
+</body>
+</html>
